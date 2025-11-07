@@ -7,7 +7,7 @@ services:
     volumes:
       - ./Backend/uploads:/app/uploads
     env_file:
-      - ./backend/.env
+      - ./Backend/.env
     depends_on:
       - mongodb
 
