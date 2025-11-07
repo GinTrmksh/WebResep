@@ -1,6 +1,6 @@
 services:
   backend:
-    image: yourusername/webresep-backend:latest
+    image: abdisopan/webresep-backend:latest
     container_name: webresep-backend
     ports:
       - "5000:5000"
@@ -12,7 +12,7 @@ services:
       - mongodb
 
   frontend:
-    image: yourusername/webresep-frontend:latest 
+    image: abdisopan/webresep-frontend:latest 
     container_name: webresep-frontend
     ports:
       - "3000:3000"

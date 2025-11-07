@@ -5,7 +5,6 @@ import path from "path";
 import cors from "cors";
 import multer from "multer";
 
-
 dotenv.config();
 const app = express();
 const __dirname = path.resolve();
