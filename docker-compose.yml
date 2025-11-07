@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./Backend
+    image: yourusername/webresep-backend:latest
     container_name: webresep-backend
     ports:
       - "5000:5000"
@@ -12,7 +12,7 @@ services:
       - mongodb
 
   frontend:
-    build: ./Frontend
+    image: yourusername/webresep-frontend:latest 
     container_name: webresep-frontend
     ports:
       - "3000:3000"
@@ -34,7 +34,7 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 5
+    command: --interval 5 webresep-backend webresep-frontend
 
 volumes:
   mongo_data:
