@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Resep Baru</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="p-4 bg-light">
+
+    <div class="container">
+        <h2 class="mb-4 text-center">🍳 Tambah Resep Baru</h2>
+
+        <form id="recipeForm" class="card p-4 shadow-sm bg-white">
+            <!-- Judul -->
+            <div class="mb-3">
+                <label class="form-label">Judul Dari ganti hai</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="mb-3">
+                <label class="form-label">Deskripsi</label>
+                <textarea class="form-control" name="description" rows="3" required></textarea>
+            </div>
+
+            <!-- Gambar -->
+            <div class="mb-3">
+                <label class="form-label">Upload Gambar</label>
+                <input type="file" class="form-control" name="image" accept="image/*" required>
+            </div>
+
+            <!-- Kesulitan -->
+            <div class="mb-3">
+                <label class="form-label">Tingkat Kesulitan</label>
+                <select class="form-select" name="difficulty" required>
+                    <option value="Mudah">Mudah</option>
+                    <option value="Sedang">Sedang</option>
+                    <option value="Sulit">Sulit</option>
+                </select>
+            </div>
+
+            <!-- Waktu dan Porsi -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Waktu Masak</label>
+                    <input type="text" class="form-control" name="time" placeholder="30 menit" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Porsi</label>
+                    <input type="text" class="form-control" name="serving" placeholder="2 porsi" required>
+                </div>
+            </div>
+
+            <!-- Bahan -->
+            <div class="mb-3">
+                <label class="form-label">Bahan (pisahkan dengan koma)</label>
+                <input type="text" class="form-control" name="ingredients" placeholder="contoh: telur, garam, nasi"
+                    required>
+            </div>
+
+            <!-- Langkah -->
+            <div class="mb-3">
+                <label class="form-label">Langkah-langkah (pisahkan dengan titik koma)</label>
+                <textarea class="form-control" name="steps"
+                    placeholder="Panaskan minyak; Goreng telur; Campur dengan nasi" required></textarea>
+            </div>
+
+            <!-- Penulis -->
+            <div class="mb-3">
+                <label class="form-label">Nama Penulis</label>
+                <input type="text" class="form-control" name="author" placeholder="Nama kamu (opsional)">
+            </div>
+
+            <!-- Tombol -->
+            <div class="d-flex justify-content-between">
+                <a href="/" class="btn btn-secondary">← Kembali</a>
+                <button type="submit" class="btn btn-primary">Simpan Resep</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/add.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResepKita - Temukan Resep Favoritmu</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-utensils"></i> ResepKita
+      </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-home"></i> Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-fire"></i> Populer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-star"></i> Favorit</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <div class="container text-center">
+      <h1>Cari Resep Favoritmu</h1>
+      <p>Ribuan resep lezat menanti untuk dicoba</p>
+      <div class="search-box d-flex justify-content-center">
+        <input type="text" id="searchInput" class="form-control w-50" placeholder="Cari resep...">
+        <button id="searchBtn" class="btn btn-primary ms-2"><i class="fas fa-search"></i> Cari</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recipes Section -->
+  <section class="recipes-section mt-5">
+    <div class="container">
+      <h2 class="section-title mb-4">✨ Resep Populer Minggu Ini</h2>
+      <div class="row" id="recipe-container">
+        <!-- Kartu resep akan ditambahkan otomatis dari JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Action Button -->
+  <div class="floating-action" title="Tambah Resep Baru" id="addRecipeBtn">
+    <i class="fas fa-plus"></i>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
