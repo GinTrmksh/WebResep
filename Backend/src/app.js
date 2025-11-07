@@ -16,8 +16,8 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 mongoose.connect(process.env.MONGO_URI || "mongodb://mongodb:27017/recipes")
-  .then(() => console.log("✅ MongoDB connected to database:", mongoose.connection.name))
-  .catch((err) => console.error("❌ MongoDB error:", err));
+  .then(() => console.log("MongoDB connected to database:", mongoose.connection.name))
+  .catch((err) => console.error("MongoDB error:", err));
 
 const recipeSchema = new mongoose.Schema({
   title: String,
@@ -158,4 +158,4 @@ app.delete("/api/recipes/:id", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
