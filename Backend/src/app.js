@@ -49,7 +49,7 @@ const upload = multer({ storage });
 // });
 
 app.get("/", (req, res) => {
-  res.send("API active");
+  res.send("API aktif bang");
 });
 
 app.get("/api/recipes", async (req, res) => {
