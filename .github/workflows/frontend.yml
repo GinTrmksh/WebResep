@@ -29,4 +29,25 @@ jobs:
           context: ./Frontend
           file: ./Frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/webresep-frontend:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/webresep-frontend:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/webresep-frontend:${{ github.sha }}
+
+      - name: Update Kubernetes Manifest
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Clone k8s repo
+          git clone https://${{ secrets.GH_PAT }}@github.com/GinTrmksh/webresep-k8s.git
+          cd webresep-k8s
+          
+          # Update image tag
+          sed -i "s|image: .*/webresep-frontend:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/webresep-frontend:${{ github.sha }}|g" k8s/frontend-deployment.yaml
+          
+          # Commit and push
+          git add k8s/frontend-deployment.yaml
+          git commit -m "Update frontend image to ${{ github.sha }}"
+          git push
